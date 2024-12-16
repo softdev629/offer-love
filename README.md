@@ -1,100 +1,74 @@
-# Welcome to React Router!
+# Offer.love Website Clone
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern React implementation of Offer.love, a platform for tracking and managing credit card offers from various banks including Amex, Chase, BoA, and Citi.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🌟 Features
 
-## Features
+- **Latest Offers Page**: View the most recent credit card offers with detailed merchant information
+- **Offers Overview**: Browse all available credit card merchant offers and promotions
+- **My Offers**: Personal dashboard to manage and search saved offers
+- **Responsive Design**: Fully responsive UI that works across desktop and mobile devices
+- **Modern UI**: Built with Tailwind CSS for a clean, modern look
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## 🛠 Tech Stack
 
-## Getting Started
+- **Framework**: React
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Build Tool**: Vite
 
-### Installation
+## 📦 Installation
 
-Install the dependencies:
-
+1. Clone the repository:
 ```bash
+git clone https://github.com/softdev629/offer-love.git
+```
+
+2. Install dependencies:
+```bash
+cd offer-love
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
-
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+## 🚀 Usage
 
-## Building for Production
+The application consists of three main pages:
 
-Create a production build:
+- `/latest` - Shows the most recent offers from all supported banks
+- `/offers` - Displays promotional content and general offer information
+- `/myoffers` - Personal dashboard for managing saved offers
 
-```bash
-npm run build
-```
+## 💅 Styling
 
-## Deployment
+This project uses Tailwind CSS for styling. The main configuration can be found in:
+- `tailwind.config.js`
+- `src/index.css`
 
-### Docker Deployment
+## 📱 Responsive Design
 
-This template includes three Dockerfiles optimized for different package managers:
+The UI is optimized for various screen sizes:
+- Desktop (1024px and above)
+- Tablet (768px to 1023px)
+- Mobile (below 768px)
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+## 🤝 Contributing
 
-To build and run using Docker:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```bash
-# For npm
-docker build -t my-app .
+## 📝 License
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
+This project is for educational purposes only. All rights belong to their respective owners.
 
-# For bun
-docker build -f Dockerfile.bun -t my-app .
+## 🙏 Acknowledgments
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- Original design inspiration from [Offer.love](https://offer.love)
+- Icons and images are property of their respective owners

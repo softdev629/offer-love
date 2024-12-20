@@ -9,12 +9,7 @@ import MobileLoginCTA from "~/components/common/MobileLoginCTA";
 import { useSearchParams } from "react-router";
 import { useEffect, useState } from "react";
 import OffersTable from "~/components/offers/OffersTable";
-
-interface Stats {
-  offers: number;
-  merchants: number;
-  lastOfferAdded: string;
-}
+import type { Stats } from "~/utils/types";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -73,8 +68,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     }
   }, [searchParams]);
 
-  console.log(searchResults);
-
   return (
     <Container>
       <PageHeader title="Offer.love - Search any anb Offers" showLogo={true} />
@@ -89,7 +82,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       </div>
 
       {searchResults && searchResults.length > 0 ? (
-        <OffersTable offers={searchResults} />
+        <>
+          <div className="inline-block px-2 py-1 mb-4 text-sm font-semibold text-white bg-green-600 rounded-full">
+            Showing <span className="font-bold">{searchResults.length}</span> Matching Offers
+          </div>
+          <OffersTable offers={searchResults} type="exp" />
+        </>
       ) : (
         <>
           {" "}

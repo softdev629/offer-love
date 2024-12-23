@@ -7,6 +7,8 @@ FROM node:20-alpine AS production-dependencies-env
 COPY ./package.json package-lock.json /app/
 WORKDIR /app
 RUN npm ci --omit=dev
+# Install cross-env globally in this stage
+RUN npm install -g cross-env npm i @react-router/serve
 
 FROM node:20-alpine AS build-env
 COPY . /app/
@@ -19,4 +21,7 @@ COPY ./package.json package-lock.json /app/
 COPY --from=production-dependencies-env /app/node_modules /app/node_modules
 COPY --from=build-env /app/build /app/build
 WORKDIR /app
-CMD ["npm", "run", "start"]
+# Install cross-env and npm i @react-router/serve in the final stage
+RUN npm install -g cross-env npm i @react-router/serve
+EXPOSE 3000
+CMD ["cross-env", "NODE_ENV=production", "react-router-serve", "./build/server/index.js"]
